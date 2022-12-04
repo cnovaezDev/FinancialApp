@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/wallet_option"
+        android:icon="@drawable/wallet_48_black"
+        android:title="Transactions" />
+    <item
+        android:id="@+id/charts_option"
+        android:icon="@drawable/piechart_48_black"
+        android:title="Charts" />
+    <item
+        android:actionLayout="@layout/custom_layout_add_transaction"
+        android:id="@+id/add_option"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/planing_option"
+        android:icon="@drawable/planning_black_48"
+        android:title="Planning" />
+    <item
+        android:id="@+id/profile_option"
+        android:icon="@drawable/account_48_black"
+        android:title="Profile" />
+</menu>

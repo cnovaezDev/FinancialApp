@@ -3,6 +3,7 @@ package com.example.android.moneyloverclon.data.database.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.android.moneyloverclon.utils.castDateToStringDateAndTime
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -18,5 +19,5 @@ data class DatesEntity(
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0L,
     @ColumnInfo(name = "date")
-    var date: Date = Calendar.getInstance().time
+    var date: String = castDateToStringDateAndTime(Calendar.getInstance().time)
 )
