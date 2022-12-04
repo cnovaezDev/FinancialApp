@@ -1,1 +1,1 @@
-# FinancialApp
+Financial App Learning Exercise
