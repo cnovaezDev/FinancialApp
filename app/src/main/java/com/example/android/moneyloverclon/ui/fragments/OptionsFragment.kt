@@ -1,6 +1,7 @@
 package com.example.android.moneyloverclon.ui.fragments
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -8,15 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import com.example.android.moneyloverclon.R
 import com.example.android.moneyloverclon.databinding.FragmentOptionsBinding
 import com.example.android.moneyloverclon.ui.viewModels.OptionsViewModel
 import com.example.android.moneyloverclon.utils.showToast
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
+import java.lang.reflect.Field
 
 
 /**
@@ -49,6 +49,7 @@ class OptionsFragment : Fragment(), NavigationBarView.OnItemSelectedListener {
     /**
      * Boiler plate code for adding a custom item to the BottomNavigationView
      */
+    @SuppressLint("RestrictedApi")
     private fun addCustomItemAdd() {
         mbottomNavigationView = binding.bottomNavigationMenu
         val mbottomNavigationMenuView =
@@ -65,6 +66,7 @@ class OptionsFragment : Fragment(), NavigationBarView.OnItemSelectedListener {
     }
 
 
+    //TODO Study if there is a better way to do this onItemClickListener
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
        when(item.itemId){
            R.id.wallet_option -> context?.showToast("wallet")

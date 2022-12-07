@@ -13,8 +13,9 @@
         android:icon="@drawable/piechart_48_black"
         android:title="Charts" />
     <item
-        android:actionLayout="@layout/custom_layout_add_transaction"
+
         android:id="@+id/add_option"
+        android:title=""
         tools:ignore="MenuTitle" />
     <item
         android:id="@+id/planing_option"

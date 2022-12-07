@@ -69,4 +69,9 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="def_value_new_amount">0</string>
+    <string name="select_category_def">Select Category</string>
+    <string name="description_def">Write note</string>
+    <string name="today_def">Today</string>
+    <string name="wallet_def">empty</string>
 </resources>

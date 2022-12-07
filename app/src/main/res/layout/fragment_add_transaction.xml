@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/gray_color">
+
+    <data>
+
+        <variable
+            name="addTransactionViewModel"
+            type="com.example.android.moneyloverclon.ui.viewModels.add_transaction.AddTransactionViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardElevation="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.fragments.add_transactions.AddTransactionFragment">
+
+
+            <LinearLayout
+
+                android:id="@+id/enter_amount_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center" />
+
+                <EditText
+                    android:textColor="@{addTransactionViewModel.textColor}"
+                    android:id="@+id/amount_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="10dp"
+                    android:drawableStart="@drawable/ic_def_money"
+                    android:paddingStart="10dp"
+                    android:text="@string/def_value_new_amount"
+                    android:textSize="28sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/select_category_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enter_amount_ly">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:src="@drawable/ic_category_temp" />
+
+                <EditText
+                    android:id="@+id/categories_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="10dp"
+                    android:hint="@string/select_category_def"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/description_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/select_category_ly">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_margin="3dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/ic_description" />
+
+                <EditText
+                    android:id="@+id/description_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="10dp"
+                    android:hint="@string/description_def"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/date_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_ly">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_margin="3dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/ic_calendar" />
+
+                <EditText
+                    android:id="@+id/date_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:text="@string/today_def"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/wallet_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_ly">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_margin="3dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/wallet_48_black" />
+
+                <EditText
+                    android:id="@+id/wallet_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:text="@string/wallet_def"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

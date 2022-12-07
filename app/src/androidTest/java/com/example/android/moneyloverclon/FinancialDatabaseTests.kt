@@ -39,65 +39,65 @@ class FinancialDatabaseTests {
     fun closeDb() {
         db.close()
     }
-
-    @Test
-    @Throws(Exception::class)
-    fun insertTransaction() {
-        val trans = TransactionsEntity();
-        trans.description = "Tests description"
-        trans.title = "Test Title";
-        transactionsDao.insertTransaction(trans)
-        val neo = transactionsDao.getLastCreatedTransactions();
-        println("Description: ${neo!!.description} title: ${neo.title} id: ${neo.id}")
-    }
-
-    @Test
-    @Throws(Exception::class)
-    fun updateTransaction() {
-        val trans = TransactionsEntity();
-        trans.description = "Tests description"
-        trans.title = "Test Title";
-        trans.quantity = 345.211
-        transactionsDao.insertTransaction(trans)
-        val neo = transactionsDao.getLastCreatedTransactions();
-        println("Description: ${neo!!.description} title: ${neo.title} id: ${neo.id} quantity: ${neo.quantity}")
-        neo.title ="New Title"
-        neo.description = "New Description"
-        neo.quantity = 100.0
-        transactionsDao.updateTransaction(neo)
-        val neo2 = transactionsDao.getLastCreatedTransactions();
-        println("Description: ${neo2!!.description} title: ${neo2.title} id: ${neo2.id} quantity: ${neo2.quantity}")
-        Assert.assertEquals(neo.id, neo2.id)
-    }
-    @Test
-    @Throws(Exception::class)
-    fun deleteTransaction() {
-        val trans = TransactionsEntity();
-        trans.description = "Tests description"
-        trans.title = "Test Title";
-        trans.quantity = 345.211
-        transactionsDao.insertTransaction(trans)
-        val neo = transactionsDao.getLastCreatedTransactions();
-        println("Description: ${neo!!.description} title: ${neo.title} id: ${neo.id} quantity: ${neo.quantity}")
-        transactionsDao.deleteTransactionById(neo.id)
-        val res = transactionsDao.getLastCreatedTransactions();
-
-        Assert.assertEquals(res, null)
-    }
-
-    @Test
-    @Throws(Exception::class)
-    fun getAllTransactions() {
-        for(i in 0..5){
-            val trans = TransactionsEntity();
-            transactionsDao.insertTransaction(trans)
-        }
-        val list = transactionsDao.getAllTransactions()
-        print("List size: ${list.size}")
-        Assert.assertEquals(list.size, 6)
-
-        transactionsDao.emptyTransactionsTable()
-val value = transactionsDao.getAllTransactions()
-        Assert.assertEquals(value, emptyList<TransactionsEntity>())
-    }
+//
+//    @Test
+//    @Throws(Exception::class)
+//    fun insertTransaction() {
+//        val trans = TransactionsEntity();
+//        trans.description = "Tests description"
+//        trans.title = "Test Title";
+//        transactionsDao.insertTransaction(trans)
+//        val neo = transactionsDao.getLastCreatedTransactions();
+//        println("Description: ${neo!!.description} title: ${neo.title} id: ${neo.id}")
+//    }
+//
+//    @Test
+//    @Throws(Exception::class)
+//    fun updateTransaction() {
+//        val trans = TransactionsEntity();
+//        trans.description = "Tests description"
+//        trans.title = "Test Title";
+//        trans.quantity = 345.211
+//        transactionsDao.insertTransaction(trans)
+//        val neo = transactionsDao.getLastCreatedTransactions();
+//        println("Description: ${neo!!.description} title: ${neo.title} id: ${neo.id} quantity: ${neo.quantity}")
+//        neo.title ="New Title"
+//        neo.description = "New Description"
+//        neo.quantity = 100.0
+//        transactionsDao.updateTransaction(neo)
+//        val neo2 = transactionsDao.getLastCreatedTransactions();
+//        println("Description: ${neo2!!.description} title: ${neo2.title} id: ${neo2.id} quantity: ${neo2.quantity}")
+//        Assert.assertEquals(neo.id, neo2.id)
+//    }
+//    @Test
+//    @Throws(Exception::class)
+//    fun deleteTransaction() {
+//        val trans = TransactionsEntity();
+//        trans.description = "Tests description"
+//        trans.title = "Test Title";
+//        trans.quantity = 345.211
+//        transactionsDao.insertTransaction(trans)
+//        val neo = transactionsDao.getLastCreatedTransactions();
+//        println("Description: ${neo!!.description} title: ${neo.title} id: ${neo.id} quantity: ${neo.quantity}")
+//        transactionsDao.deleteTransactionById(neo.id)
+//        val res = transactionsDao.getLastCreatedTransactions();
+//
+//        Assert.assertEquals(res, null)
+//    }
+//
+//    @Test
+//    @Throws(Exception::class)
+//    fun getAllTransactions() {
+//        for(i in 0..5){
+//            val trans = TransactionsEntity();
+//            transactionsDao.insertTransaction(trans)
+//        }
+//        val list = transactionsDao.getAllTransactions()
+//        print("List size: ${list.size}")
+//        Assert.assertEquals(list.size, 6)
+//
+//        transactionsDao.emptyTransactionsTable()
+//val value = transactionsDao.getAllTransactions()
+//        Assert.assertEquals(value, emptyList<TransactionsEntity>())
+//    }
 }

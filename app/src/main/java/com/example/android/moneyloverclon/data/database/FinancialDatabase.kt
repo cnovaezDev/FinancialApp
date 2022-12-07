@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.android.moneyloverclon.data.database.dao.CategoriesDao
 import com.example.android.moneyloverclon.data.database.dao.TransactionsDao
 import com.example.android.moneyloverclon.data.database.entities.*
 
@@ -18,26 +19,30 @@ import com.example.android.moneyloverclon.data.database.entities.*
 )
 abstract class FinancialDatabase : RoomDatabase() {
 
-    abstract val transactionsDao: TransactionsDao
+    abstract fun getTransactionsDao(): TransactionsDao
+    abstract fun getCategoriesDao(): CategoriesDao
 
-    companion object {
-        @Volatile
-        private var INSTANCE: FinancialDatabase? = null
-
-        fun getInstance(context: Context): FinancialDatabase {
-            synchronized(this) {
-                var instance = INSTANCE
-                if (instance == null) {
-                    instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        FinancialDatabase::class.java,
-                        "financial_database"
-                    ).fallbackToDestructiveMigration()
-                        .build()
-                    INSTANCE = instance
-                }
-                return instance
-            }
-        }
-    }
+//    /**
+//     * Boiler plate code for creating a new instance of the database
+//     */
+//    companion object {
+//        @Volatile
+//        private var INSTANCE: FinancialDatabase? = null
+//
+//        fun getInstance(context: Context): FinancialDatabase {
+//            synchronized(this) {
+//                var instance = INSTANCE
+//                if (instance == null) {
+//                    instance = Room.databaseBuilder(
+//                        context.applicationContext,
+//                        FinancialDatabase::class.java,
+//                        "financial_database"
+//                    ).fallbackToDestructiveMigration()
+//                        .build()
+//                    INSTANCE = instance
+//                }
+//                return instance
+//            }
+//        }
+//    }
 }

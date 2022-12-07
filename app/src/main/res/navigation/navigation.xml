@@ -9,5 +9,21 @@
         android:id="@+id/noDataFragment"
         android:name="com.example.android.moneyloverclon.ui.fragments.NoDataFragment"
         android:label="fragment_no_data"
-        tools:layout="@layout/fragment_no_data" />
+        tools:layout="@layout/fragment_no_data" >
+        <action
+            android:id="@+id/action_noDataFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.example.android.moneyloverclon.ui.fragments.add_transactions.AddTransactionFragment"
+        android:label="AddTransactionFragment" >
+        <action
+            android:id="@+id/action_addTransactionFragment_to_noDataFragment"
+            app:destination="@id/noDataFragment" />
+        <argument
+            android:name="categoryId"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
 </navigation>

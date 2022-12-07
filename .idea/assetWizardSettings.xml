@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/C:/sdk/icons/material/materialicons/playlist_add_check/baseline_playlist_add_check_24.xml" />
+                                      <entry key="url" value="file:/C:/sdk/icons/material/materialicons/calendar_today/baseline_calendar_today_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="planning_black_48" />
+                            <entry key="outputName" value="ic_calendar" />
                             <entry key="sourceFile" value="D:\PROGRAMMING\+PROJECTS\+GIT\MoneyLoverClonApp" />
                           </map>
                         </option>

@@ -22,5 +22,8 @@
 
     <color name="green_color">#388310</color>
     <color name="white_text_color">#f0f0f0</color>
+    <color name="black">#000000</color>
+    <color name="gray_color">#979797</color>
+    <color name="red_color">#D32F2F</color>
 
 </resources>
