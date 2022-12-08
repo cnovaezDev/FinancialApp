@@ -14,7 +14,7 @@
         android:title="Charts" />
     <item
 
-        android:id="@+id/add_option"
+        android:id="@+id/addTransactionFragment"
         android:title=""
         tools:ignore="MenuTitle" />
     <item

@@ -25,7 +25,6 @@
 
 
             <LinearLayout
-
                 android:id="@+id/enter_amount_ly"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +40,8 @@
                     android:layout_gravity="center" />
 
                 <EditText
-                    android:textColor="@{addTransactionViewModel.textColor}"
+                    android:on="@{()-> addTransactionViewModel.navigateToEnterAmountScreen()}"
+                    android:clickable="false"
                     android:id="@+id/amount_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,6 +50,7 @@
                     android:drawableStart="@drawable/ic_def_money"
                     android:paddingStart="10dp"
                     android:text="@string/def_value_new_amount"
+                    android:textColor="@{addTransactionViewModel.textColor}"
                     android:textSize="28sp"
                     tools:ignore="RtlSymmetry" />
 
@@ -66,8 +67,8 @@
                 app:layout_constraintTop_toBottomOf="@id/enter_amount_ly">
 
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/width_and_heigth_icons_add_transaction"
+                    android:layout_height="@dimen/width_and_heigth_icons_add_transaction"
                     android:layout_gravity="center"
                     android:layout_margin="3dp"
                     android:src="@drawable/ic_category_temp" />
@@ -81,7 +82,7 @@
                     android:hint="@string/select_category_def"
                     android:paddingStart="10dp"
                     android:textColor="@color/black"
-                    android:textSize="28sp"
+                    android:textSize="20sp"
                     tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
@@ -97,8 +98,8 @@
                 app:layout_constraintTop_toBottomOf="@id/select_category_ly">
 
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/width_and_heigth_icons_add_transaction"
+                    android:layout_height="@dimen/width_and_heigth_icons_add_transaction"
                     android:layout_gravity="center|bottom"
                     android:layout_margin="3dp"
                     android:scaleX="0.7"
@@ -114,7 +115,7 @@
                     android:hint="@string/description_def"
                     android:paddingStart="10dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/secondary_letter_add_transaction"
                     tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
@@ -130,8 +131,8 @@
                 app:layout_constraintTop_toBottomOf="@id/description_ly">
 
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/width_and_heigth_icons_add_transaction"
+                    android:layout_height="@dimen/width_and_heigth_icons_add_transaction"
                     android:layout_gravity="center|bottom"
                     android:layout_margin="3dp"
                     android:scaleX="0.7"
@@ -147,7 +148,7 @@
                     android:paddingStart="10dp"
                     android:text="@string/today_def"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/secondary_letter_add_transaction"
                     tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
@@ -166,8 +167,8 @@
                 app:layout_constraintTop_toBottomOf="@id/date_ly">
 
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/width_and_heigth_icons_add_transaction"
+                    android:layout_height="@dimen/width_and_heigth_icons_add_transaction"
                     android:layout_gravity="center|bottom"
                     android:layout_margin="3dp"
                     android:scaleX="0.7"
@@ -183,7 +184,7 @@
                     android:paddingStart="10dp"
                     android:text="@string/wallet_def"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/secondary_letter_add_transaction"
                     tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
